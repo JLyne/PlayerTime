@@ -1,0 +1,11 @@
+name: PlayerTime
+main: uk.co.notnull.playertime.PlayerTime
+version: @project.version@
+api-version: 1.16
+author: Jim (NotKatuen)
+description: Per player time
+commands:
+  ptime:
+    description: Changes the time, visible only to you
+    usage: /<command> day,noon,night,midnight,0-24000
+permissions: {}
