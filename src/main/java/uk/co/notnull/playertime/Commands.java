@@ -1,5 +1,7 @@
 package uk.co.notnull.playertime;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,7 +30,8 @@ public class Commands implements CommandExecutor {
 
 			if (label.equalsIgnoreCase("ptime")) {
 				if (args.length == 0) {
-					player.sendMessage(ChatColor.GREEN + "Current time is " + (player.getPlayerTime() % 24000));
+					player.sendMessage(Component.text("Current time is " + (player.getPlayerTime() % 24000)).color(
+							NamedTextColor.GREEN));
 					return true;
 				}
 
@@ -36,20 +39,20 @@ public class Commands implements CommandExecutor {
 
 				if (times.containsKey(args[0].toLowerCase())) {
 					player.setPlayerTime(times.get(timeArg), false);
-					player.sendMessage(ChatColor.GREEN + "Time set to " + timeArg + " (" + times.get(timeArg) + ")");
+					player.sendMessage(Component.text("Time set to " + timeArg + " (" + times.get(timeArg) + ")").color(NamedTextColor.GREEN));
 				} else {
 					try {
 						int time = Math.min(24000, Math.max(0, Integer.parseInt(args[0])));
 						player.setPlayerTime(time, false);
-						player.sendMessage(ChatColor.GREEN + "Time set to " + time);
+						player.sendMessage(Component.text("Time set to " + time).color(NamedTextColor.GREEN));
 					} catch (NumberFormatException e) {
-						player.sendMessage(ChatColor.RED + "Invalid time. Valid times: day,noon,night,midnight,0-24000");
+						player.sendMessage(Component.text("Invalid time. Valid times: day,noon,night,midnight,0-24000").color(NamedTextColor.RED));
 					}
 				}
 			}
 
 		} else {
-			sender.sendMessage(ChatColor.RED + "You have to be a player to do that.");
+			sender.sendMessage(Component.text("You have to be a player to do that.").color(NamedTextColor.RED));
 		}
 
 		return true;
