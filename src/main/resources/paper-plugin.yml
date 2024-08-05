@@ -1,0 +1,11 @@
+name: PlayerTime
+main: uk.co.notnull.playertime.PlayerTime
+version: @project.version@
+api-version: '1.21'
+author: Jim (AnEnragedPigeon)
+description: Per player time
+
+permissions:
+  ptime.command:
+    description: 'Allows use of /ptime'
+    default: true
