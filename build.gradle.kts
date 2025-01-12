@@ -25,7 +25,7 @@ dependencies {
 
 paper {
     main = "uk.co.notnull.playertime.PlayerTime"
-    apiVersion = libs.versions.paperApiVersion.get().replace(Regex("\\-R\\d.\\d-SNAPSHOT"), "")
+    apiVersion = libs.versions.paperApi.get().replace(Regex("\\-R\\d.\\d-SNAPSHOT"), "")
     authors = listOf("Jim (AnEnragedPigeon)")
     description = "Per player time"
 
