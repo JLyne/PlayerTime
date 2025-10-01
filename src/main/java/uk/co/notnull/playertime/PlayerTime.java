@@ -7,7 +7,6 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("UnstableApiUsage")
 public class PlayerTime extends JavaPlugin implements Listener {
 	public void onEnable() {
 		LifecycleEventManager<@NotNull Plugin> manager = getLifecycleManager();
